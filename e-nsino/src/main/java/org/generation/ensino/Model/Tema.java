@@ -12,7 +12,7 @@ import javax.validation.constraints.NotBlank;
 @Table(name = "tb_temas")
 public class Tema {
 	
-	
+	//teste de commit
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
