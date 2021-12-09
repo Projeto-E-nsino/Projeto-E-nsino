@@ -6,6 +6,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Range;
 
 
 @Entity
@@ -18,12 +21,15 @@ public class Tema {
 	private long id;
 	
 	@NotBlank(message = "O atributo descrição não pode estar vazio")
+	@Size (min = 3, max = 255, message = "O atributo descrição deve conter no mínimo 3 letras")
 	private String descricao;
 	
 	@NotBlank(message = "O atributo nível não pode estar vazio")
+	@Size (min = 1, max = 45, message = "O atributo nível deve conter no mínimo 3 letras")
 	private String nivel;
 	
 	@NotBlank(message = "O atributo área não pode estar vazio")
+	@Size (min = 3, max = 45, message = "O atributo area deve conter no mínimo 3 letras")
 	private String area;
 	
 	
