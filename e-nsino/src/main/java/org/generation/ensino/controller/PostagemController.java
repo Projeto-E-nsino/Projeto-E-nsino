@@ -3,6 +3,7 @@ package org.generation.ensino.controller;
 import java.util.List;
 
 import org.generation.ensino.Model.Postagem;
+import org.generation.ensino.repository.PostagemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,7 +32,7 @@ public class PostagemController {
 	}
 	
 	//Retornar postagem por id
-	@GetMapping("{/id}")
+	@GetMapping("/{id}")
     public ResponseEntity<Postagem> GetById(@PathVariable long id){
     	return postRepository.findById(id)
     			.map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
@@ -45,13 +46,13 @@ public class PostagemController {
 	
 	//Popular a tabela
 	@PostMapping
-	public ResponseEntity<Postagem> post (@RequestBody Postagem produto){
+	public ResponseEntity<Postagem> postPostagem (@RequestBody Postagem postagem){
 		return ResponseEntity.status(HttpStatus.CREATED).body(postRepository.save(postagem));
 	}
 	
 	//Atualizar valores a tabela
 	 @PutMapping
-	 public ResponseEntity<Postagem> put (@RequestBody Postagem postagem){
+	 public ResponseEntity<Postagem> putPostagem (@RequestBody Postagem postagem){
 		return ResponseEntity.ok(postRepository.save(postagem));
 	 }
 	 
@@ -59,7 +60,7 @@ public class PostagemController {
 	 @DeleteMapping("/{id}")
 	    public ResponseEntity<?> deleteRepository(@PathVariable long id) {
 	        return postRepository.findById(id).map(resposta -> {
-	            prodRepository.deleteById(id);
+	            postRepository.deleteById(id);
 	            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
 	        }).orElse(ResponseEntity.notFound().build());
 	    }
