@@ -1,14 +1,18 @@
 package org.generation.ensino.Model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-import org.hibernate.validator.constraints.Range;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
 @Entity
@@ -32,6 +36,9 @@ public class Tema {
 	@Size (min = 3, max = 45, message = "O atributo area deve conter no mínimo 3 letras")
 	private String area;
 	
+	@OneToMany(mappedBy = "tema", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("tema")
+	private List<Postagem> postagem;
 	
 	public long getId() {
 		return id;
@@ -65,5 +72,14 @@ public class Tema {
 		this.area = area;
 	}
 
+	public List<Postagem> getPostagem() {
+		return postagem;
+	}
+
+	public void setPostagem(List<Postagem> postagem) {
+		this.postagem = postagem;
+	}
+	
+	
 	
 }
