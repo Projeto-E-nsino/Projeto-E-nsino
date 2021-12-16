@@ -1,4 +1,4 @@
-package org.generation.ensino.Model;
+package org.generation.ensino.model;
 
 import java.util.Date;
 
@@ -41,10 +41,9 @@ public class Postagem {
 	@JsonIgnoreProperties("postagem")
 	private Tema tema;
 	
-	/*@ManyToOne
+	@ManyToOne
 	@JsonIgnoreProperties("postagem")
 	private Usuario usuario;
-	 */
 
 	public long getId() {
 		return id;
@@ -86,11 +85,11 @@ public class Postagem {
 		this.tema = tema;
 	}
 
-	/*public Usuario getUsuario() {
+	public Usuario getUsuario() {
 		return usuario;
 	}
 
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-*/}
+}

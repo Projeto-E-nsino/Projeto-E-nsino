@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
-import org.generation.ensino.Model.Tema;
+import org.generation.ensino.model.Tema;
 import org.generation.ensino.repository.TemaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

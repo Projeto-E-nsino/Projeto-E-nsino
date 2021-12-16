@@ -1,4 +1,4 @@
-package org.generation.ensino.Model;
+package org.generation.ensino.model;
 
 import java.util.List;
 

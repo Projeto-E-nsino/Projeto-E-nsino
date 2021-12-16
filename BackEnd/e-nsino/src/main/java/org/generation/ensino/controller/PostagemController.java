@@ -2,7 +2,7 @@ package org.generation.ensino.controller;
 
 import java.util.List;
 
-import org.generation.ensino.Model.Postagem;
+import org.generation.ensino.model.Postagem;
 import org.generation.ensino.repository.PostagemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
