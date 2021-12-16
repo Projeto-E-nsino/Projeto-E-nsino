@@ -1,5 +1,6 @@
 package org.generation.ensino.controller;
 
+
 import java.util.List;
 import java.util.Optional;
 
@@ -16,9 +17,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import org.generation.ensino.model.UsuarioLogin;
 import org.generation.ensino.model.Usuario;
+import org.generation.ensino.model.UsuarioLogin;
 import org.generation.ensino.repository.UsuarioRepository;
 import org.generation.ensino.service.UsuarioService;
 
