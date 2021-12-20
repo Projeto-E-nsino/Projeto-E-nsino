@@ -38,10 +38,15 @@ import io.swagger.v3.oas.annotations.media.Schema;
         @NotBlank (message = "Por favor insira a senha de no minimo 6 caracteres")
         @Size(min = 6)
         private String senha;
-    
-        @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+        
+        private String foto;
+        
+
+		@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
         @JsonIgnoreProperties("usuario")
         private List<Postagem> postagem;
+        
+        
 
         public long getId() {
             return id;
@@ -74,6 +79,14 @@ import io.swagger.v3.oas.annotations.media.Schema;
         public void setSenha(String senha) {
             this.senha = senha;
         }
+        
+        public String getFoto() {
+			return foto;
+		}
+
+		public void setFoto(String foto) {
+			this.foto = foto;
+		}
 
         public List<Postagem> getPostagem() {
             return postagem;
